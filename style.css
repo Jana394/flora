@@ -230,3 +230,34 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
+
+/*mobile support*/
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .about-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about-gallery .about-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .about-gallery .about-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+}
