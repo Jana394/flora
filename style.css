@@ -34,35 +34,50 @@ main {
 header {
     background: var(--primary);
     padding: 15px 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 nav {
     width: 85%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 700;
     color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
 }
 
+.logo:hover {
+    transform: scale(1.08);
+    letter-spacing: 1px;
+}
 nav ul {
     list-style: none;
     display: flex;
+    gap: 25px;
+    margin: 0 auto;
+    justify-items:auto;
 }
-/*stari nav ul li*/
-/*nav ul li {
-    margin-left: 25px;
-}*/
+
 nav ul li {
-    margin: 0;
-    padding: 0;
+    padding-right: 90px;
+    margin-left: 15px;
 }
-/*novi nav ul li*/
 
 nav ul li a {
     color: white;
@@ -124,17 +139,38 @@ nav ul li a:hover {
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card {
+    position: relative;
+    overflow: visible;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
-
+.card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
 .card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .card-content {
@@ -218,6 +254,32 @@ footer {
     margin-top: auto;
 }
 
+a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.paragraf {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.form-container p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
 @media (max-width: 1200px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
@@ -236,20 +298,139 @@ footer {
     }
 }
 
+.wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.wishlist:hover {
+    transform: scale(1.2);
+    background: #ffe4ec;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.icon {
+    position: relative;
+}
+
+.icon::after {
+    content: "2";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+
+    background: white;
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: bold;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
+.about-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
 
+.about-gallery .about-card {
+    width: 360px; 
+    margin: 0;
+    background: var(--light);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-/*mobile support*/
+.about-gallery .about-card img {
+    width: 100%;
+    height: 260px; 
+    object-fit: cover;
+}
+
+.about-gallery .about-card h3 {
+    padding: 12px;
+    color: var(--primary);
+}
+
+.about-gallery .about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 992px) {
+    .about-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .about-gallery .about-card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-gallery .about-card {
+        width: 90%;
+    }
+}
+
 @media (max-width: 768px) {
 
     .container {
         width: 95%;
-        padding: 20px 10px;
+        padding: 20px 0;
     }
 
     .about-gallery {
-        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
@@ -257,33 +438,39 @@ footer {
 
     .about-gallery .about-card {
         width: 100%;
-        max-width: 380px;
+        max-width: 420px;
     }
 
     .about-gallery .about-card img {
         width: 100%;
-        height: 220px;
+        height: 240px;
         object-fit: cover;
     }
 }
 
-
-/*mobile support v2*/
 @media (max-width: 768px) {
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+    /* Popravljamo uvodni deo da se tekst ne gnječi */
+    .hero {
+        padding: 40px 20px; 
+    }
+    
+    /* Popravljamo sliku ispod teksta */
+    .hero-img {
+        height: auto; 
     }
 
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Popravljamo meni da ide jedan ispod drugog na telefonu */
+    nav {
+        flex-direction: column;
     }
-}
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    
+    nav ul {
+        flex-direction: column;
+        padding-top: 15px;
+        text-align: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
 }
