@@ -261,3 +261,19 @@ footer {
         object-fit: cover;
     }
 }
+
+
+/*mobile support v2*/
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
