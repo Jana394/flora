@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <title>Registracija - Cvećara Flora</title>
+    <link rel="stylesheet" href="jana.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">🌸 Flora 🌸</a>
+        <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="ponuda.html">Ponuda</a></li>
+            <li><a href="onama.html">O nama</a></li>
+            <li><a href="registracija.html">Registracija</a></li>
+        </ul>
+        <div class="icons">
+            <div class="icon">❤</div>
+            <div class="icon">🛒</div>
+        </div>
+    </nav>
+</header>
+
+<section class="container">
+    <h2>Registrujte se i ostvarite popuste</h2>
+    <p>Pridružite se našem programu lojalnosti i skupljajte bodove za ekskluzivne pogodnosti.</p>
+
+    <div class="form-container">
+<form onsubmit="return showMessage(event)">
+    <input type="text" placeholder="Ime i prezime" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Lozinka" required>
+    <button type="submit" class="btn">Registruj se</button>
+</form>
+
+<p id="successMessage" style="color:green; margin-top:15px; font-weight:bold;"></p>
+
+<script>
+function showMessage(event) {
+    event.preventDefault();
+    document.getElementById("successMessage").innerText =
+        "Registracija uspešna!";
+    return false;
+}
+</script>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Cvećara Flora. Sva prava zadržana.</p>
+</footer>
+
+</body>
+</html>
