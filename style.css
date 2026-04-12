@@ -54,10 +54,15 @@ nav ul {
     list-style: none;
     display: flex;
 }
-
-nav ul li {
+/*stari nav ul li*/
+/*nav ul li {
     margin-left: 25px;
+}*/
+nav ul li {
+    margin: 0;
+    padding: 0;
 }
+/*novi nav ul li*/
 
 nav ul li a {
     color: white;
