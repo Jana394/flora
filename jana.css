@@ -474,3 +474,43 @@ a:hover {
         margin: 10px 0;
     }
 }
+
+
+/*fix za mobile header*/
+@media (max-width: 768px) {
+
+    header {
+        padding: 8px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .icons {
+        margin-top: 5px;
+        justify-content: center;
+    }
+}
