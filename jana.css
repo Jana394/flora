@@ -257,3 +257,41 @@ footer {
         width: 100%;
     }
 }
+
+/* ========================= */
+/* DESKTOP FIX (VRATI LEP IZGLED) */
+/* ========================= */
+
+@media (min-width: 769px) {
+
+    nav {
+        width: 85%;
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .hero {
+        padding: 40px 100px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .about-card {
+        width: 300px;
+    }
+}
