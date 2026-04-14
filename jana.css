@@ -30,15 +30,13 @@ body {
 main {
     flex: 1;
 }
-
+/*izmenjen header*/
 header {
     background: var(--primary);
-    padding: 15px 0;
-
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
@@ -66,17 +64,19 @@ nav {
     transform: scale(1.08);
     letter-spacing: 1px;
 }
+/*dodat justify-content*/
 nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
     margin: 0 auto;
-    justify-items:auto;
+    align-items: center;
+    justify-content: center;
 }
-
+/*promena ovde*/
 nav ul li {
-    padding-right: 90px;
-    margin-left: 15px;
+    margin: 0 12px;
+    padding: 0;
 }
 
 nav ul li a {
