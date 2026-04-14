@@ -447,30 +447,54 @@ a:hover {
         object-fit: cover;
     }
 }
-
+/*mobile support*/
 @media (max-width: 768px) {
-    /* Popravljamo uvodni deo da se tekst ne gnječi */
-    .hero {
-        padding: 40px 20px; 
-    }
-    
-    /* Popravljamo sliku ispod teksta */
-    .hero-img {
-        height: auto; 
-    }
 
-    /* Popravljamo meni da ide jedan ispod drugog na telefonu */
+    /* RESET NAV PROBLEMA */
     nav {
         flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        gap: 10px;
     }
-    
+
     nav ul {
         flex-direction: column;
-        padding-top: 15px;
-        text-align: center;
+        gap: 10px;
+        padding: 0;
     }
-    
+
     nav ul li {
-        margin: 10px 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* HERO FIX (NAJBITNIJE) */
+    .hero {
+        padding: 20px 15px;
+    }
+
+    /* SPREČAVA HORIZONTALNO PRELIVANJE */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* SLIKE DA NE IZLAZE */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* KARTICE */
+    .cards {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    /* HERO SLIKA */
+    .hero-img {
+        width: 100%;
+        height: auto;
     }
 }
+
